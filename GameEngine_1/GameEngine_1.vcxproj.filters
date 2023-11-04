@@ -10,6 +10,7 @@
     <ClInclude Include="GameEninge\App\EngineSystem\RenderingSystem\RSystem_Prerequisite.h" />
     <ClInclude Include="GameEninge\App\EngineSystem\WindowSystem\GraphicsWindow\GraphicsWindow.h" />
     <ClInclude Include="GameEninge\App\EngineSystem\WindowSystem\Window\Window.h" />
+    <ClInclude Include="DeviceContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameEninge\App\main.cpp" />
@@ -19,5 +20,6 @@
     <ClCompile Include="GameEninge\App\EngineSystem\RenderingSystem\Renderer\Renderer.cpp" />
     <ClCompile Include="GameEninge\App\EngineSystem\WindowSystem\GraphicsWindow\GraphicsWindow.cpp" />
     <ClCompile Include="GameEninge\App\EngineSystem\WindowSystem\Window\Window.cpp" />
+    <ClCompile Include="DeviceContext.cpp" />
   </ItemGroup>
 </Project>

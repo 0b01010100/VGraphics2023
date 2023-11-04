@@ -42,7 +42,11 @@ LRESULT Window::Non_StaticEventProc(HWND hwnd, UINT messages, WPARAM Wparam, LPA
 {
 	switch (messages)
 	{
-
+		case WM_PAINT:
+		{
+			OnUpdate();
+			break;
+		}
 		case WM_SETFOCUS:
 		{
 			OnFocus();
@@ -60,12 +64,43 @@ LRESULT Window::Non_StaticEventProc(HWND hwnd, UINT messages, WPARAM Wparam, LPA
 	return DefWindowProc(hwnd, messages, Wparam, Lparam);
 }
 
+void Window::GetClientRect(const Window& wnd, RECT* out_clientRect)
+{
+	::GetClientRect(wnd.hWnd, out_clientRect);
+}
+
+void Window::GetClientSize(const Window& wnd, int* out_height, int* out_width)
+{
+	RECT clientRect;
+	::GetClientRect(wnd.hWnd, &clientRect);
+	*out_height = clientRect.bottom - clientRect.top;
+	*out_width = clientRect.right - clientRect.left;
+}
+
+void Window::GetWindowRect(const Window& wnd, RECT* out_wndRect)
+{
+	::GetWindowRect(wnd.hWnd, out_wndRect);
+}
+
+void Window::GetWindowSize(const Window& wnd, int* out_height, int* out_width)
+{
+	RECT windowRect;
+	::GetWindowRect(wnd.hWnd, &windowRect);
+	*out_height = windowRect.bottom - windowRect.top;
+	*out_width = windowRect.right - windowRect.left;
+}
+
 void Window::OnFocus()
 {
 
 }
 
 void Window::OnKillFocus()
+{
+
+}
+
+void Window::OnUpdate()
 {
 
 }

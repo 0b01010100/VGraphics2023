@@ -18,6 +18,6 @@ public:
 
 	void static AddExtraData(LONG_PTR data, int typeofData, Window_base& wnd);
 private:
-	friend class Window_base;
+	friend struct Window_base;
 };
 

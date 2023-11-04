@@ -1,31 +1,33 @@
 #pragma once
 #include "Renderer/Renderer.h"
 #include "EngineSystem/RenderingSystem/RSystem_Prerequisite.h"
-struct Window_base;
+#include "EngineSystem/RenderingSystem/SwapChain/SwapChain.h"
 class Renderer;
 class SwapChain;
+class GraphicsWindow;
 class RenderingSystem
 {
-public:
-	RenderingSystem();
-	//Only accesable to the Window which to Render on to
 private:
-
-	void CreateDevice();
-	void CreateSwapChain();
+	RenderingSystem();
+	~RenderingSystem();
+private:
+	static RenderingSystem* get();
+private:
+	static void CreateDevice();
+	static void CreateSwapChain(GraphicsWindow* wnd);
 	void CreateVertexBuffer();
 	void CreateVertex();
 	void CreatePixelShader();
-public:
+
 private:
-private:
-	Microsoft::WRL::ComPtr<ID3D11DeviceContext> m_pImmediateContext = nullptr;
-	Microsoft::WRL::ComPtr<ID3D11Device> m_pDevice = nullptr;
-	Microsoft::WRL::ComPtr<IDXGIAdapter> m_IDXGIAdapter = nullptr;
-	Microsoft::WRL::ComPtr<IDXGIFactory> m_IDXGIFactory = nullptr;
-	Microsoft::WRL::ComPtr<IDXGIDevice> m_IDXGIDevice = nullptr;
+	static ID3D11DeviceContext* m_pImmediateContext;
+	static ID3D11Device* m_pDevice;
+	static IDXGIDevice* m_IDXGIDevice;
+	static IDXGIFactory* m_IDXGIFactory;
+	static RenderingSystem* system;
 private:
 	friend class Renderer;
 	friend class SwapChain;
+	friend class GraphicsWindow;
 };
 

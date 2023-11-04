@@ -9,10 +9,9 @@ LPSTR,
 int nCmd
 )
 {
-	Window d = Window(L"dwdws", 500, 500, hInstance, WS_SYSMENU);
-	Window d1 = Window(L"dwdws1", 500, 500, hInstance, WS_SYSMENU);
-	GraphicsWindow d2 = GraphicsWindow(hInstance);
-	
+	//Window d = Window(L"dwdws", 500, 500, hInstance, WS_SYSMENU);
+	//Window d2 = Window(L"dwdws1", 500, 500, hInstance, WS_SYSMENU);
+	GraphicsWindow d1 = GraphicsWindow(L"GW0",hInstance);
 
 	MSG msg;
 	while (GetMessage(&msg, 0, 0, 0) > 0)

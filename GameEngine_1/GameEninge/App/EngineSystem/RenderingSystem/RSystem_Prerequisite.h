@@ -5,5 +5,4 @@
 #include <dxgi.h>
 #pragma comment(lib, "d3dcompiler.lib")
 #include <d3dcompiler.h>
-#include <wrl/client.h>
 #include <exception>

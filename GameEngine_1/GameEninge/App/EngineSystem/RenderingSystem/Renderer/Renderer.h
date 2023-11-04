@@ -2,13 +2,16 @@
 #include "../App/EngineSystem/RenderingSystem/RenderingSystem.h"
 #include "EngineSystem/RenderingSystem/RSystem_Prerequisite.h"
 class RenderingSystem;
+class SwapChain;
 class Renderer
 {
 public:
-	Renderer(HWND wnd, int wnd_hieght, int wnd_width);
-private:
-	static RenderingSystem* m_system;
-private:
+	static void Clearbuffer(SwapChain& sw,float r, float g, float b);
+	static void Draw(const SwapChain& sw);
+	static void EndFrame(const SwapChain& sw);
+public:
 	friend class RenderingSystem;
+	friend class GraphicsWindow;
+	friend class SwapChain;
 };
 
