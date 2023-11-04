@@ -2,9 +2,6 @@
 #include "Renderer/Renderer.h"
 #include "EngineSystem/RenderingSystem/RSystem_Prerequisite.h"
 #include "EngineSystem/RenderingSystem/SwapChain/SwapChain.h"
-class Renderer;
-class SwapChain;
-class GraphicsWindow;
 class RenderingSystem
 {
 private:

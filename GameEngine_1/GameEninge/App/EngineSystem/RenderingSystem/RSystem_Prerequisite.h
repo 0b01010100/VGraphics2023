@@ -6,3 +6,4 @@
 #pragma comment(lib, "d3dcompiler.lib")
 #include <d3dcompiler.h>
 #include <exception>
+#include <wrl/client.h>
