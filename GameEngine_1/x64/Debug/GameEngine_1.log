@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\GameEninge\App\EngineSystem\WindowSystem\WndSystem.h(21,26): warning C4099: 'Window_base': type name first seen using 'struct' now seen using 'class'
+C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\GameEninge\App\EngineSystem\WindowSystem\WndSystem.h(4,8): message : see declaration of 'Window_base'
+  GameEngine_1.vcxproj -> C:\Users\josdd\VS2022\repos\GameEngine_1\x64\Debug\GameEngine_1.exe
