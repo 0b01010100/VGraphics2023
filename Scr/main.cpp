@@ -1,16 +1,12 @@
-#include <Games/Game/VGame.hpp>
-#include <SDL/SDL.h>
-#undef main
-int main ( void )
+#include <Win32/GraphicsEngine/DX11/Requirements.hpp>
+int main() 
 {
-    VGame game = {};
-    game.Start ( );
-    while ((true))
+	Win32Window wnd = Win32Window(L"SceneView", 300, 300);
+	D3D11GraphicsEngine ge = D3D11GraphicsEngine(&wnd);
+	ge.start();
+	while (true)
 	{
-        SDL_Delay ( 3 );
-        game.Update ( );
+		wnd.update();
+		ge.update();
 	}
-    return 0;
 }
-
-

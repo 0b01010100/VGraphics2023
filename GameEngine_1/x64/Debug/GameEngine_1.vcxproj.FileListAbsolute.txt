@@ -1,3 +1,0 @@
-C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\x64\Debug\GameEngine_1.vcxproj.MdMergeInputs.cache
-C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\x64\Debug\GameEngine_1.vcxproj.cppwinrt_plat.cache
-C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\x64\Debug\GameEngine_1.vcxproj.cppwinrt_comp.cache

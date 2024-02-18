@@ -1,0 +1,15 @@
+﻿  main.cpp
+  D3D11ConstantBuffer.cpp
+  Win32DeviceContext.cpp
+  D3D11IndexBuffer.cpp
+  D3D11PixelShader.cpp
+  Win32RenderSys.cpp
+  Win32SwapChain.cpp
+  VertexBuffer.cpp
+  D3D11VertexShader.cpp
+  Win32GraphicsEngine.cpp
+C:\Users\josdd\source\repos\VE\VirtuleEngine\Scr\VE\scr\Win32\GraphicsEngine\DX11\Win32GraphicsEngine.cpp(32,5): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\josdd\source\repos\VE\VirtuleEngine\Scr\VE\scr\Win32\GraphicsEngine\DX11\Win32GraphicsEngine.cpp(34,10): warning C4305: 'argument': truncation from 'double' to 'float'
+  Win32Window.cpp
+  Generating Code...
+  TestGameEngine.vcxproj -> C:\Users\josdd\source\repos\VE\VirtuleEngine\Debug\TestGameEngine.exe

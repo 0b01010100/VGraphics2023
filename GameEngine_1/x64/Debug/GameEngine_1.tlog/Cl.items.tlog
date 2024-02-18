@@ -1,8 +1,0 @@
-C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\DeviceContext.cpp;C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\x64\Debug\DeviceContext.obj
-C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\GameEninge\App\main.cpp;C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\x64\Debug\main.obj
-C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\GameEninge\App\EngineSystem\RenderingSystem\Renderer\Renderer.cpp;C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\x64\Debug\Renderer.obj
-C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\GameEninge\App\EngineSystem\RenderingSystem\RenderingSystem.cpp;C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\x64\Debug\RenderingSystem.obj
-C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\GameEninge\App\EngineSystem\RenderingSystem\SwapChain\SwapChain.cpp;C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\x64\Debug\SwapChain.obj
-C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\GameEninge\App\EngineSystem\WindowSystem\WndSystem.cpp;C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\x64\Debug\WndSystem.obj
-C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\GameEninge\App\EngineSystem\WindowSystem\GraphicsWindow\GraphicsWindow.cpp;C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\x64\Debug\GraphicsWindow.obj
-C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\GameEninge\App\EngineSystem\WindowSystem\Window\Window.cpp;C:\Users\josdd\VS2022\repos\GameEngine_1\GameEngine_1\x64\Debug\Window.obj
