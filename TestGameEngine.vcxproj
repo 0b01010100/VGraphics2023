@@ -23,34 +23,40 @@
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)Scr\VE\inc;$(SolutionDir)Scr\Game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)Scr\VE\inc;$(SolutionDir)Scr\Game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <ClCompile Include="Scr\VE\scr\Win32\GraphicsEngine\DX11\ConstantBuffer\D3D11ConstantBuffer.cpp" />
-    <ClCompile Include="Scr\VE\scr\Win32\GraphicsEngine\DX11\DeviceContext\Win32DeviceContext.cpp" />
-    <ClCompile Include="Scr\VE\scr\Win32\GraphicsEngine\DX11\IndexBuffer\D3D11IndexBuffer.cpp" />
-    <ClCompile Include="Scr\VE\scr\Win32\GraphicsEngine\DX11\PixelShader\D3D11PixelShader.cpp" />
-    <ClCompile Include="Scr\VE\scr\Win32\GraphicsEngine\DX11\RenderSystem\Win32RenderSys.cpp" />
-    <ClCompile Include="Scr\VE\scr\Win32\GraphicsEngine\DX11\SwapChain\Win32SwapChain.cpp" />
-    <ClCompile Include="Scr\VE\scr\Win32\GraphicsEngine\DX11\VertexBuffer\VertexBuffer.cpp" />
-    <ClCompile Include="Scr\VE\scr\Win32\GraphicsEngine\DX11\VertexShader\D3D11VertexShader.cpp" />
-    <ClCompile Include="Scr\VE\scr\Win32\GraphicsEngine\DX11\Win32GraphicsEngine.cpp" />
-    <ClCompile Include="Scr\VE\scr\Win32\Window\Win32Window.cpp" />
+    <ClCompile Include="Scr\VE\scr\Graphics\DX11\ConstantBuffer\D3D11ConstantBuffer.cpp" />
+    <ClCompile Include="Scr\VE\scr\Graphics\DX11\DeviceContext\Win32DeviceContext.cpp" />
+    <ClCompile Include="Scr\VE\scr\Graphics\DX11\IndexBuffer\D3D11IndexBuffer.cpp" />
+    <ClCompile Include="Scr\VE\scr\Graphics\DX11\PixelShader\D3D11PixelShader.cpp" />
+    <ClCompile Include="Scr\VE\scr\Graphics\DX11\RenderSystem\Win32RenderSys.cpp" />
+    <ClCompile Include="Scr\VE\scr\Graphics\DX11\SwapChain\Win32SwapChain.cpp" />
+    <ClCompile Include="Scr\VE\scr\Graphics\DX11\VertexBuffer\VertexBuffer.cpp" />
+    <ClCompile Include="Scr\VE\scr\Graphics\DX11\VertexShader\D3D11VertexShader.cpp" />
+    <ClCompile Include="Scr\VE\scr\Graphics\DX11\Win32GraphicsEngine.cpp" />
+    <ClCompile Include="Scr\VE\scr\Window\Win32Window.cpp" />
+    <ClCompile Include="Scr\VE\scr\Input\Win32InputSystem.cpp" />
+    <ClCompile Include="Scr\VE\scr\Input\VInputSystem.cpp" />
+    <ClCompile Include="Scr\VG\VGame.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scr\VE\inc\Math\All.h" />
     <ClInclude Include="Scr\VE\inc\Math\VVector2D.h" />
     <ClInclude Include="Scr\VE\inc\Math\VVector3D.h" />
     <ClInclude Include="Scr\VE\inc\Math\VVector4D.h" />
-    <ClInclude Include="Scr\VE\inc\Win32\DebugTools.h" />
-    <ClInclude Include="Scr\VE\inc\Win32\GraphicsEngine\DX11\ConstantBuffer\D3D11ConstantBuffer.hpp" />
-    <ClInclude Include="Scr\VE\inc\Win32\GraphicsEngine\DX11\D3D11GraphicsEngine.hpp" />
-    <ClInclude Include="Scr\VE\inc\Win32\GraphicsEngine\DX11\DeviceContext\D3D11DeviceContext.hpp" />
-    <ClInclude Include="Scr\VE\inc\Win32\GraphicsEngine\DX11\IndexBuffer\D3D11IndexBuffer.h" />
-    <ClInclude Include="Scr\VE\inc\Win32\GraphicsEngine\DX11\PixelShader\D3D11PixelShader.hpp" />
-    <ClInclude Include="Scr\VE\inc\Win32\GraphicsEngine\DX11\RenderSystem\D3D11RenderSys.hpp" />
-    <ClInclude Include="Scr\VE\inc\Win32\GraphicsEngine\DX11\Requirements.hpp" />
-    <ClInclude Include="Scr\VE\inc\Win32\GraphicsEngine\DX11\SwapChain\D3D11SwapChain.hpp" />
-    <ClInclude Include="Scr\VE\inc\Win32\GraphicsEngine\DX11\VertexBuffer\D3D11VertexBuffer.hpp" />
-    <ClInclude Include="Scr\VE\inc\Win32\GraphicsEngine\DX11\VertexShader\D3D11VertexShader.hpp" />
-    <ClInclude Include="Scr\VE\inc\Win32\Window\Win32Window.hpp" />
+    <ClInclude Include="Scr\VE\inc\Graphics\DX11\ConstantBuffer\D3D11ConstantBuffer.hpp" />
+    <ClInclude Include="Scr\VE\inc\Graphics\DX11\D3D11GraphicsEngine.hpp" />
+    <ClInclude Include="Scr\VE\inc\Graphics\DX11\DeviceContext\D3D11DeviceContext.hpp" />
+    <ClInclude Include="Scr\VE\inc\Graphics\DX11\IndexBuffer\D3D11IndexBuffer.h" />
+    <ClInclude Include="Scr\VE\inc\Graphics\DX11\PixelShader\D3D11PixelShader.hpp" />
+    <ClInclude Include="Scr\VE\inc\Graphics\DX11\RenderSystem\D3D11RenderSys.hpp" />
+    <ClInclude Include="Scr\VE\inc\Graphics\DX11\Requirements.hpp" />
+    <ClInclude Include="Scr\VE\inc\Graphics\DX11\SwapChain\D3D11SwapChain.hpp" />
+    <ClInclude Include="Scr\VE\inc\Graphics\DX11\VertexBuffer\D3D11VertexBuffer.hpp" />
+    <ClInclude Include="Scr\VE\inc\Graphics\DX11\VertexShader\D3D11VertexShader.hpp" />
+    <ClInclude Include="Scr\VE\inc\Input\inputs.hpp" />
+    <ClInclude Include="Scr\VE\inc\Window\Win32\Win32Window.hpp" />
+    <ClInclude Include="Scr\VE\inc\Input\Win32\Win32InputSystem.hpp" />
+    <ClInclude Include="Scr\VE\inc\Input\VInputSystem.hpp" />
+    <ClInclude Include="Scr\VG\VGame.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -120,7 +126,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(Solution)Scr\VE\inc;$(Solution)Scr\VE\inc\Win32\GraphicsEngine\Shaders</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(Solution)Scr\VE\inc;$(Solution)Scr\VE\inc\Win32\GraphicsEngine\Shaders;$(Solution)Dependencies;$(Solution)Src\VG</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpplatest</LanguageStandard>
     </ClCompile>
     <Link>
@@ -142,7 +148,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(Solution)Scr\VE\inc;$(Solution)Scr\VE\inc\Win32\GraphicsEngine\Shaders</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(Solution)Scr\VE\inc;$(Solution)Scr\VE\inc\Win32\GraphicsEngine\Shaders;$(Solution)Dependencies;$(Solution)Src\VG</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
