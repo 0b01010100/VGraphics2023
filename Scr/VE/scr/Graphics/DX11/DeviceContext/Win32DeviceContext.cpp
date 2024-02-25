@@ -17,7 +17,7 @@ void D3D11DeviceContext::setVertexBuffers(class D3D11VertexBuffer* pVertexBuffer
 	const UINT stride = pVertexBuffer->m_size_vertex;
 	const UINT offset = 0b0;
 	this->m_devCon->IASetVertexBuffers(0, 1, &pVertexBuffer->m_vertexBuffer, &stride, &offset);
-	this->m_devCon->IASetInputLayout(pVertexBuffer->m_inputLayout.Get());
+	this->m_devCon->IASetInputLayout(pVertexBuffer->m_inputLayout);
 	if (pVertexBuffer->m_vertexBuffer)pVertexBuffer->m_vertexBuffer->Release();
 	if (pVertexBuffer->m_vertexBuffer)pVertexBuffer->m_inputLayout->Release();
 }
@@ -25,12 +25,12 @@ void D3D11DeviceContext::setVertexBuffers(class D3D11VertexBuffer* pVertexBuffer
 void D3D11DeviceContext::setVertexShader(D3D11VertexShader* pVertexShader)
 {
 	this->m_devCon->VSSetShader(pVertexShader->vertex_shader, nullptr, 0);
-	pVertexShader->vertex_shader->Release();
+	pVertexShader->vertex_shader->Release(); 
 }
 
 void D3D11DeviceContext::setPixelShader(D3D11PixelShader* pPixelShader)
 {
-	this->m_devCon->PSSetShader(pPixelShader->pixel_shader.Get(), nullptr, 0);
+	this->m_devCon->PSSetShader(pPixelShader->pixel_shader, nullptr, 0);
 	pPixelShader->pixel_shader->Release();
 }
 
@@ -54,8 +54,7 @@ void D3D11DeviceContext::setPixelShaderConstantBuffer(D3D11ConstantBuffer* pCons
 
 void D3D11DeviceContext::setIndexBuffer(D3D11IndexBuffer* pIndexBuffer)
 {
-	unsigned int offset = pIndexBuffer->m_index_size;
-	this->m_devCon->IASetIndexBuffer(pIndexBuffer->m_indexBuffer, DXGI_FORMAT::DXGI_FORMAT_R32_UINT, offset);
+	this->m_devCon->IASetIndexBuffer(pIndexBuffer->m_indexBuffer, DXGI_FORMAT::DXGI_FORMAT_R32_UINT, 0);
 }
 
 void D3D11DeviceContext::setViewPort(float SizeX, float SizeY, float MinDepth, float MaxDepth)
@@ -66,6 +65,11 @@ void D3D11DeviceContext::setViewPort(float SizeX, float SizeY, float MinDepth, f
 	vp.MinDepth = MinDepth;
 	vp.MaxDepth = MaxDepth;
 	this->m_devCon->RSSetViewports(1, &vp);
+}
+
+void D3D11DeviceContext::updateConstBuffer(D3D11ConstantBuffer* pConstBuffer, void* data)
+{
+	this->m_devCon->UpdateSubresource(pConstBuffer->m_constantBuffer, 0, 0, data, 0, 0);
 }
 
 

@@ -4,6 +4,9 @@
 	that helps us outline how a shape should be draw 
 	using less computer memory, compared just only using a 
 	vertexBuffer
+
+	Can be thought as a list of indies that refer the a particalar verties. where each 
+	three sequencal indies corresponds to a triangle
 */
 class D3D11IndexBuffer
 {

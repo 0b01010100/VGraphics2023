@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Scr\VE\scr\Graphics\DX11\Texture\D3D11Texture2D.cpp" />
     <ClCompile Include="Scr\main.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)Scr\VE\inc;$(SolutionDir)Scr\Game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)Scr\VE\inc;$(SolutionDir)Scr\Game;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -38,7 +39,11 @@
     <ClCompile Include="Scr\VG\VGame.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Scr\VE\inc\Debuging\DebugUtils.h" />
+    <ClInclude Include="Scr\VE\inc\Graphics\DX11\Texture\D3D11Texture2D.hpp" />
     <ClInclude Include="Scr\VE\inc\Math\All.h" />
+    <ClInclude Include="Scr\VE\inc\Math\VMatrix2x2.h" />
+    <ClInclude Include="Scr\VE\inc\Math\VMatrix3x3.h" />
     <ClInclude Include="Scr\VE\inc\Math\VVector2D.h" />
     <ClInclude Include="Scr\VE\inc\Math\VVector3D.h" />
     <ClInclude Include="Scr\VE\inc\Math\VVector4D.h" />

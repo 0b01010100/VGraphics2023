@@ -16,17 +16,20 @@ public:
 	class D3D11PixelShader * createPixelShader(const wchar_t * file_path);
 	//Create a DX11 Constant Buffer
 	class D3D11ConstantBuffer* createConstantBuffer(const void * constData, const unsigned int dataSize);
+	//create a DX11 2D texture
+	class D3D11Texture2D* createTexture2D(const char* file_path); 
 	//Create a DX11 Index Buffer
 	class D3D11IndexBuffer* createIndexBuffer(void* data, unsigned int index_size, unsigned int list_size);
 	//for creating MSVC spesfic resources, like vertex buffers, constant buffer and shader
-	class Microsoft::WRL::ComPtr < struct ID3D11Device > m_dev;
+
+	 struct ID3D11Device * m_dev;
 	//For DXGI objects that produce image data.
-	class Microsoft::WRL::ComPtr < struct IDXGIDevice > m_dxgi_dev;
+	 struct IDXGIDevice * m_dxgi_dev;
 	//Represents your Graphics adapter 
-	class Microsoft::WRL::ComPtr <struct IDXGIAdapter > m_adpt;
+	struct IDXGIAdapter * m_adpt;
 	/*An IDXGIFactory interface implements methods for generating DXGI objects
 	(which handle full screen transitions).*/
-	class Microsoft::WRL::ComPtr <struct IDXGIFactory > m_fac;
+	struct IDXGIFactory * m_fac;
 	//pointer to a custom class that encapsulates the handling of a DX11 swap Chain
 	class D3D11SwapChain * swapChain = nullptr;
 	//pointer to custom class that encapsulates the whole DX11 rendering API

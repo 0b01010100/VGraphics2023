@@ -19,9 +19,9 @@ public:
 	//Will set the PixelShader given to be used in the Pixel Shader stage 
 	void setPixelShader(class D3D11PixelShader* pPixelShader);
 	//Will set the a constant buffer given, to be used in a specfic VertexShader given
-	void setVertexShaderConstantBuffer(class D3D11ConstantBuffer* pConstBuffer[], unsigned char amount);
+	void setVertexShaderConstantBuffer(class D3D11ConstantBuffer* ppConstBuffer[], unsigned char amount);
 	//Will set the a constant buffer given, to be used in a specfic PixelShader given
-	void setPixelShaderConstantBuffer(class D3D11ConstantBuffer* pConstBuffer[], unsigned char amount);
+	void setPixelShaderConstantBuffer(class D3D11ConstantBuffer* ppConstBuffer[], unsigned char amount);
 	//Will set the index buffer given, to be used
 	void setIndexBuffer(class D3D11IndexBuffer* pIndexBuffer);
 	//A view port a 2D rectangle used to project a 3D scene to the position of a virtual camera. 
@@ -31,8 +31,10 @@ public:
 	//MinDepth -> viewport minimume depth for a 3D scene
 	//MaxDepth -> viewport maximume depth for a 3D scene
 	void setViewPort(float SizeX, float SizeY, float MinDepth = 0b0, float MaxDepth = 0b1);
+	//updates the constant buffer with new constant data
+	void updateConstBuffer(class D3D11ConstantBuffer* pConstBuffer, void* data);
 	//For telling the Graphics Card what to do with the resources created by ID3D11device
-	class Microsoft::WRL::ComPtr< struct ID3D11DeviceContext > m_devCon;
+	struct ID3D11DeviceContext* m_devCon;
 	//Pointer to the class that called the constructor of this class
 	class D3D11RenderSys* m_system = nullptr;
 };

@@ -3,3 +3,7 @@ Debug
 x64
 x86
 Release
+.obj
+.pdb
+.log
+.tlog

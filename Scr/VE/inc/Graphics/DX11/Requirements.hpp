@@ -14,6 +14,7 @@ class D3D11ConstantBuffer;
 class D3D11IndexBuffer;
 class D3D11VertexShader;
 class D3D11PixelShader;
+class D3D11Texture2D;
 #include <Window/Win32/Win32Window.hpp>
 #include <Graphics/DX11/D3D11GraphicsEngine.hpp>
 #include <Graphics/DX11/RenderSystem/D3D11RenderSys.hpp>
@@ -24,6 +25,7 @@ class D3D11PixelShader;
 #include <Graphics/DX11/IndexBuffer/D3D11IndexBuffer.h>
 #include <Graphics/DX11/VertexShader/D3D11VertexShader.hpp>
 #include <Graphics/DX11/PixelShader/D3D11PixelShader.hpp>
+#include <Graphics/DX11/Texture/D3D11Texture2D.hpp>
 
 
 #include<string>
@@ -53,13 +55,13 @@ class D3D11PixelShader;
 }
 //Assert if value is null
 #include <assert.h>
-#define Win32_ERROR(arg, error)\
+#define NULL_ERROR(arg, error)\
 {\
 	if(arg == 0){\
 		std::wostringstream ws; \
 		ws << error<< L"\n"; \
 		OutputDebugString(ws.str().c_str()); \
-		MessageBox(0, ws.str().c_str(), L"WIN32 Error" , 0);\
+		MessageBox(0, ws.str().c_str(), L"NULL_ERROR" , 0);\
 	}\
 }
 

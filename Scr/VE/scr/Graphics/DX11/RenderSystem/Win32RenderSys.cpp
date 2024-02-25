@@ -68,6 +68,12 @@ class D3D11ConstantBuffer* D3D11RenderSys::createConstantBuffer(const void* cons
 	return cb;
 }
 
+class D3D11Texture2D* D3D11RenderSys::createTexture2D(const char* file_path)
+{
+	class D3D11Texture2D*  tex = new class D3D11Texture2D(file_path, this);
+	return tex;
+}
+
 class D3D11IndexBuffer* D3D11RenderSys::createIndexBuffer(void* data, unsigned int index_size, unsigned int list_size)
 {
 	class D3D11IndexBuffer* ib = new class D3D11IndexBuffer(data, index_size, list_size, this);

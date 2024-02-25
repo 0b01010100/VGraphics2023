@@ -12,6 +12,8 @@ class D3D11SwapChain
 public:
 	D3D11SwapChain(class D3D11RenderSys* system);
 	~D3D11SwapChain();
+	//load swap chain buffer
+	void loadBuffers(HWND hwnd);
 	//Pointer to Microsoft Windows specfic SwapChain
 	struct IDXGISwapChain * m_sw;
 	//RenderTargetViews allows us to draw on a swap chain buffer 

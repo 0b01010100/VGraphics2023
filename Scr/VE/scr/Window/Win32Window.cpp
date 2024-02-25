@@ -44,9 +44,29 @@ void Win32Window::update()
 
 }
 
-void Win32Window::onSize()
+void Win32Window::onSize(const RECT& size)
 {
 	
+}
+void Win32Window::onFocus()
+{
+	this->isUserFocus = true;
+}
+void Win32Window::onUnFocus()
+{
+	this->isUserFocus = false;
+}
+bool Win32Window::hasUserFocus()
+{
+	return this->isUserFocus;
+}
+RECT Win32Window::getClientSize()
+{
+	RECT rc = {};
+	::GetClientRect(m_hwnd, /*ref OutPut*/&rc);
+	::ClientToScreen(m_hwnd, (LPPOINT)&rc.left);
+	::ClientToScreen(m_hwnd, (LPPOINT)&rc.right);
+	return { rc.left, rc.top, rc.right - rc.left, rc.bottom - rc.top };//Return RECT rc variable
 }
 LRESULT Win32Window::EventHandlerSetUp(HWND hwnd, UINT messages, WPARAM Wparam, LPARAM Lparam)
 {
@@ -83,17 +103,20 @@ LRESULT Win32Window::NonStaticEventHandler(HWND hwnd, UINT messages, WPARAM Wpar
 		}
 		case WM_SIZE: 
 		{
-			onSize();
+			Win32Window* window = (Win32Window*)GetWindowLongPtr(hwnd, GWLP_USERDATA);
+			if (window) window->onSize(window->getClientSize());
 			break;
 		}
 		case WM_SETFOCUS:
 		{
-
+			Win32Window* window = (Win32Window*)GetWindowLongPtr(hwnd, GWLP_USERDATA);
+			if (window) window->onFocus();
 			break;
 		}
 		case WM_KILLFOCUS:
 		{
-
+			Win32Window* window = (Win32Window*)GetWindowLongPtr(hwnd, GWLP_USERDATA);
+			if (window) window->onUnFocus();
 			break;
 		}
 
@@ -101,6 +124,12 @@ LRESULT Win32Window::NonStaticEventHandler(HWND hwnd, UINT messages, WPARAM Wpar
 			break;
 	}
 	return DefWindowProc(hwnd, messages, Wparam, Lparam);
+}
+RECT Win32Window::getClientWindowRect()
+{
+	RECT rc;
+	::GetClientRect(this->m_hwnd, &rc);
+	return rc;
 }
 
 HWND Win32Window::getHwnd() const

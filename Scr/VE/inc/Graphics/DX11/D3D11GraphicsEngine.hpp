@@ -9,8 +9,6 @@ public:
 	D3D11GraphicsEngine(class Win32Window* window);
 	D3D11GraphicsEngine() = delete;
 	D3D11GraphicsEngine(class D3D11GraphicsEngine&) = delete;
-	//called after the constructer to start seting up the Graphics engine
-	void  start();
 	//called after the start to update the Graphics engine
 	void  update();
 	class Win32Window* m_window;

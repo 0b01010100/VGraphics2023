@@ -4,10 +4,23 @@ D3D11SwapChain::D3D11SwapChain(class D3D11RenderSys* system)
 {
 	this->m_system = system;
 	
-	struct DXGI_SWAP_CHAIN_DESC description = {};
-	description.BufferCount = 1;// one extrax buffer so two will be used. 
 	//Get window handle  
 	HWND hwnd = this->m_system->m_engine->m_window->getHwnd();
+	//load swapChain Buffers
+	loadBuffers(hwnd);
+}
+
+D3D11SwapChain::~D3D11SwapChain()
+{
+	if(m_rtv) this->m_rtv->Release();
+}
+
+
+void D3D11SwapChain::loadBuffers(HWND hwnd)
+{
+	struct DXGI_SWAP_CHAIN_DESC description = {};
+	description.BufferCount = 1;// one extrax buffer so two will be used. 
+
 	//Get client size of the window 
 	RECT wr = {};
 	GetClientRect(hwnd, &wr);
@@ -24,7 +37,7 @@ D3D11SwapChain::D3D11SwapChain(class D3D11RenderSys* system)
 	//How to format the color channels of each the pixel 
 	description.BufferDesc.Format = DXGI_FORMAT::DXGI_FORMAT_R8G8B8A8_UNORM;
 	//Setting RefreshRate
-	description.BufferDesc.RefreshRate = { 60U, 0U };
+	description.BufferDesc.RefreshRate = { 10U, 0U };
 	//How well to sample colors from a texture on to each pixel
 	description.SampleDesc = { 1U, 0U };
 	//Yes the buffer will be used a Render target view to draw on them 
@@ -35,7 +48,7 @@ D3D11SwapChain::D3D11SwapChain(class D3D11RenderSys* system)
 	//finally try to create swap Chain and do Error checking to make sure creation was ok
 	DX11_ERROR( this->m_system->m_fac->CreateSwapChain
 	(
-		this->m_system->m_dev.Get(),
+		this->m_system->m_dev,
 		&description,
 		&m_sw
 	), L"Faild to Create SwapChain for DirectX 11 in Win32SwapChain class\n");
@@ -60,9 +73,4 @@ D3D11SwapChain::D3D11SwapChain(class D3D11RenderSys* system)
 
 	//Release ref to resource when done using it
 	TEX->Release();
-}
-
-D3D11SwapChain::~D3D11SwapChain()
-{
-	if(m_rtv) this->m_rtv->Release();
 }

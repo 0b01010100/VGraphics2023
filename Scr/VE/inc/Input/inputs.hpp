@@ -6,7 +6,7 @@ enum class VKeyState : char
 	down,
 	up,
 };
-enum class VKey : char
+enum class VKey : short
 {
 	null = 0,
 	//Numbers
@@ -39,11 +39,22 @@ enum class VKey : char
 	_N,
 	_O,
 	_P,
-	//LEFT SHIFT
-	_LS,
-	//RIGHT SHFT
-	_RS,
-
+	_Q,
+	_R,
+	_S,
+	_T,
+	_U,
+	_V,
+	_W,
+	_X,
+	_Y,
+	_Z,
 	//ESCAPE KEY
-	_ESC = VK_ESCAPE
+	_ESC = VK_ESCAPE,
+	//RIGHT SHFT
+	_RS = VK_RSHIFT,
+	//LEFT SHIFT
+	_LS = VK_LSHIFT,
+
+
 };

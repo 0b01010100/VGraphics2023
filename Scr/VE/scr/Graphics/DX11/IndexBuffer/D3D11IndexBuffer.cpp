@@ -15,6 +15,7 @@ D3D11IndexBuffer::D3D11IndexBuffer(void* data, unsigned int index_size, unsigned
 	description.BindFlags = D3D11_BIND_INDEX_BUFFER;
 	//0 if no CPU access is necessary
 	description.CPUAccessFlags = 0;
+
 	//create a helper structer to help tell to GPU what we want to GPU memory
 	D3D11_SUBRESOURCE_DATA gpu_resource = {};
 	//make the pointer to to the data we want as a index buffer 

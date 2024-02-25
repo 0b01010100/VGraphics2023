@@ -7,7 +7,7 @@ Win32InputSystem::Win32InputSystem()
 bool Win32InputSystem::isKey(enum class VKey key, enum class VKeyState state)
 {
 	//add the list of key to check for 
-	keysToCheck.emplace(std::make_tuple(key, VKeyState::null));
+	keysToCheck.emplace(std::make_pair(key, VKeyState::null));
 	//check of key is down 
 	if (GetAsyncKeyState((int)key)) 
 	{
