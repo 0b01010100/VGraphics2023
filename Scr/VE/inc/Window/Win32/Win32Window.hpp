@@ -1,5 +1,6 @@
 #pragma once
 #include <Windows.h>
+#include <Math/VRect.h>
 //A Application Window
 //Warning: This class is for windows x86 and x64
 class Win32Window
@@ -33,7 +34,7 @@ public:
 	//A event handler for each instant of the Win32Window class.
 	virtual LRESULT NonStaticEventHandler (HWND hwnd, UINT messages, WPARAM Wparam, LPARAM Lparam);
 	//gets the width and height of a the window
-	RECT getClientWindowRect();
+	VRect<> getClientWindowRect();
 	//retrun a copy to the window handle
 	HWND getHwnd() const;
 	//handle to window 

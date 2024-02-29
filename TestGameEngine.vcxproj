@@ -42,8 +42,10 @@
     <ClInclude Include="Scr\VE\inc\Debuging\DebugUtils.h" />
     <ClInclude Include="Scr\VE\inc\Graphics\DX11\Texture\D3D11Texture2D.hpp" />
     <ClInclude Include="Scr\VE\inc\Math\All.h" />
+    <ClInclude Include="Scr\VE\inc\Math\VMatrix4x4.h" />
     <ClInclude Include="Scr\VE\inc\Math\VMatrix2x2.h" />
     <ClInclude Include="Scr\VE\inc\Math\VMatrix3x3.h" />
+    <ClInclude Include="Scr\VE\inc\Math\VRect.h" />
     <ClInclude Include="Scr\VE\inc\Math\VVector2D.h" />
     <ClInclude Include="Scr\VE\inc\Math\VVector3D.h" />
     <ClInclude Include="Scr\VE\inc\Math\VVector4D.h" />

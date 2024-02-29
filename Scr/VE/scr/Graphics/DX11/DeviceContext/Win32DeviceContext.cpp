@@ -25,7 +25,7 @@ void D3D11DeviceContext::setVertexBuffers(class D3D11VertexBuffer* pVertexBuffer
 void D3D11DeviceContext::setVertexShader(D3D11VertexShader* pVertexShader)
 {
 	this->m_devCon->VSSetShader(pVertexShader->vertex_shader, nullptr, 0);
-	pVertexShader->vertex_shader->Release(); 
+	if(pVertexShader) pVertexShader->vertex_shader->Release();
 }
 
 void D3D11DeviceContext::setPixelShader(D3D11PixelShader* pPixelShader)

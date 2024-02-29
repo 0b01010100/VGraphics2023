@@ -42,7 +42,7 @@ D3D11VertexBuffer::D3D11VertexBuffer(void* data, unsigned int size_vertex, unsig
 	DX11_ERROR( 
 		this->m_parent->m_dev->CreateInputLayout(
 		desc, 
-		2, 
+		ARRAYSIZE(desc),
 		this->m_parent->pshader_code, 
 		this->m_parent->BytecodeLength, 
 		&this->m_inputLayout 

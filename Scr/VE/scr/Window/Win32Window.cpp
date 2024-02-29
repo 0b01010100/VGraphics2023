@@ -1,6 +1,7 @@
 #include <Windows.h>
 #include <iostream>
 #include <Window/Win32/Win32Window.hpp>
+
 Win32Window::Win32Window(const wchar_t* Name, unsigned int SizeX, unsigned int SizeY)
 {
 	//Create window
@@ -125,11 +126,16 @@ LRESULT Win32Window::NonStaticEventHandler(HWND hwnd, UINT messages, WPARAM Wpar
 	}
 	return DefWindowProc(hwnd, messages, Wparam, Lparam);
 }
-RECT Win32Window::getClientWindowRect()
+struct VRect<> Win32Window::getClientWindowRect()
 {
 	RECT rc;
 	::GetClientRect(this->m_hwnd, &rc);
-	return rc;
+	VRect vrc;
+	vrc.bottom = rc.bottom;
+	vrc.left = rc.left;
+	vrc.right = rc.right;
+	vrc.top = rc.top;
+	return vrc;
 }
 
 HWND Win32Window::getHwnd() const

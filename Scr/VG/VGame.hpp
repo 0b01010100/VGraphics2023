@@ -12,7 +12,7 @@ public:
 	class D3D11GraphicsEngine* m_ge;
 	class VInputSystem* m_input;
 
-	VVector2D pos = { -0.540000, 0.840000, };
+	VVector2D pos = {  };
 
 };
 

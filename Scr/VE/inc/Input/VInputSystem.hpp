@@ -4,10 +4,10 @@
 class VInputSystem
 {
 public:
-	//check for the desired state of a key
+	//checks for the a key state for the desired key
 	virtual bool isKey(enum class VKey key, enum class VKeyState state) = 0;
 protected:
-	//A dictionay the keys track of the current state of a key
+	//A dictionay the keys and key state that keeps track of the keys the user is checking for 
 	std::map<VKey, VKeyState> keysToCheck;
 };
 
