@@ -33,6 +33,8 @@ public:
 	void setViewPort(float SizeX, float SizeY, float MinDepth = 0b0, float MaxDepth = 0b1);
 	//updates the constant buffer with new constant data
 	void updateConstBuffer(class D3D11ConstantBuffer* pConstBuffer, void* data);
+	//Sets a texture to be used in a Pixel Shader 
+	void setPixelShaderTexture(class D3D11Texture2D* texure[], unsigned char amount);
 	//For telling the Graphics Card what to do with the resources created by ID3D11device
 	struct ID3D11DeviceContext* m_devCon;
 	//Pointer to the class that called the constructor of this class

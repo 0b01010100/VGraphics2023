@@ -16,7 +16,7 @@ public:
 	class D3D11PixelShader * createPixelShader(const wchar_t * file_path);
 	//Create a DX11 Constant Buffer
 	class D3D11ConstantBuffer* createConstantBuffer(const void * constData, const unsigned int dataSize);
-	//create a DX11 2D texture
+	//create a DX11 2D texture using the given file_path
 	class D3D11Texture2D* createTexture2D(const char* file_path); 
 	//Create a DX11 Index Buffer
 	class D3D11IndexBuffer* createIndexBuffer(void* data, unsigned int index_size, unsigned int list_size);

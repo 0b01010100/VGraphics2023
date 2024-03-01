@@ -22,19 +22,19 @@ void D3D11DeviceContext::setVertexBuffers(class D3D11VertexBuffer* pVertexBuffer
 	if (pVertexBuffer->m_vertexBuffer)pVertexBuffer->m_inputLayout->Release();
 }
 
-void D3D11DeviceContext::setVertexShader(D3D11VertexShader* pVertexShader)
+void D3D11DeviceContext::setVertexShader(class D3D11VertexShader* pVertexShader)
 {
 	this->m_devCon->VSSetShader(pVertexShader->vertex_shader, nullptr, 0);
 	if(pVertexShader) pVertexShader->vertex_shader->Release();
 }
 
-void D3D11DeviceContext::setPixelShader(D3D11PixelShader* pPixelShader)
+void D3D11DeviceContext::setPixelShader(class D3D11PixelShader* pPixelShader)
 {
 	this->m_devCon->PSSetShader(pPixelShader->pixel_shader, nullptr, 0);
 	pPixelShader->pixel_shader->Release();
 }
 
-void D3D11DeviceContext::setVertexShaderConstantBuffer(D3D11ConstantBuffer* pConstBuffer[], unsigned char amount)
+void D3D11DeviceContext::setVertexShaderConstantBuffer(class D3D11ConstantBuffer* pConstBuffer[], unsigned char amount)
 {
 	for (unsigned char index = 0; index < amount;)
 	{
@@ -43,7 +43,7 @@ void D3D11DeviceContext::setVertexShaderConstantBuffer(D3D11ConstantBuffer* pCon
 	}
 }
 
-void D3D11DeviceContext::setPixelShaderConstantBuffer(D3D11ConstantBuffer* pConstBuffer[], unsigned char amount)
+void D3D11DeviceContext::setPixelShaderConstantBuffer(class D3D11ConstantBuffer* pConstBuffer[], unsigned char amount)
 {
 	for (unsigned char index = 0; index < amount;)
 	{
@@ -52,7 +52,7 @@ void D3D11DeviceContext::setPixelShaderConstantBuffer(D3D11ConstantBuffer* pCons
 	}
 }
 
-void D3D11DeviceContext::setIndexBuffer(D3D11IndexBuffer* pIndexBuffer)
+void D3D11DeviceContext::setIndexBuffer(class D3D11IndexBuffer* pIndexBuffer)
 {
 	this->m_devCon->IASetIndexBuffer(pIndexBuffer->m_indexBuffer, DXGI_FORMAT::DXGI_FORMAT_R32_UINT, 0);
 }
@@ -67,9 +67,19 @@ void D3D11DeviceContext::setViewPort(float SizeX, float SizeY, float MinDepth, f
 	this->m_devCon->RSSetViewports(1, &vp);
 }
 
-void D3D11DeviceContext::updateConstBuffer(D3D11ConstantBuffer* pConstBuffer, void* data)
+void D3D11DeviceContext::updateConstBuffer(class D3D11ConstantBuffer* pConstBuffer, void* data)
 {
 	this->m_devCon->UpdateSubresource(pConstBuffer->m_constantBuffer, 0, 0, data, 0, 0);
+}
+
+void D3D11DeviceContext::setPixelShaderTexture(class D3D11Texture2D* texure[], unsigned char amount)
+{
+	for (unsigned char index = 0; index < amount;)
+	{
+		this->m_devCon->PSSetShaderResources(index,1, &texure[index]->m_reasourve_view);
+		this->m_devCon->PSSetSamplers(index, 1, &texure[index]->m_sample_state);
+		index++;
+	}
 }
 
 

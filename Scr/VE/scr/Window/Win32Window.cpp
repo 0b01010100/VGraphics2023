@@ -130,7 +130,7 @@ struct VRect<> Win32Window::getClientWindowRect()
 {
 	RECT rc;
 	::GetClientRect(this->m_hwnd, &rc);
-	VRect vrc;
+	VRect<> vrc;
 	vrc.bottom = rc.bottom;
 	vrc.left = rc.left;
 	vrc.right = rc.right;

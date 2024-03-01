@@ -25,11 +25,22 @@ struct Vertex
 	VVector3D pos;
 	VVector3D color;
 };
+struct VertexAndTex
+{
+	VVector3D pos;
+	VVector2D color;
+};
 Vertex tri[3]
 {
 	{{-0.5,-0.5,0}, {1,0,0},},
 	{{0,0.5,0}, {0,1,0},},
 	{{0.5,-0.5,0}, {1,0,1}},
+};
+VertexAndTex VTtri[3]
+{
+	{{-0.5,-0.5,0}, {0,1},},
+	{{0,0.5,0}, {0.5,0},},
+	{{0.5,-0.5,0}, {1,1}},
 };
 
 D3D11ConstantBuffer* cb;
@@ -39,11 +50,13 @@ void VGame::start()
 {
 	float d = 2.9f;
 	//create a 2D texture 
-	//D3D11Texture2D* tex = this->m_ge->m_system->createTexture2D("C:\\Users\\josdd\\source\\repos\\VE\\VirtuleEngine\\Scr\\VE\\inc\\Graphics\\Textures\\me.jpg");
+	D3D11Texture2D* tex = this->m_ge->m_system->createTexture2D("C:\\Users\\josdd\\source\\repos\\VE\\VirtuleEngine\\Scr\\VE\\inc\\Graphics\\Textures\\me.jpg");
+	this->m_ge->m_system->m_deviceContext->setPixelShaderTexture(&tex, 1);
 	//set up shaders
-	D3D11VertexShader* vs = this->m_ge->m_system->createVertexShader(L"Scr\\VE\\inc\\Graphics\\Shaders\\VertexShader.hlsl");
+
+	D3D11VertexShader* vs = this->m_ge->m_system->createVertexShader(L"Scr\\VE\\inc\\Graphics\\Shaders\\TextureSampling.hlsl");
 	this->m_ge->m_system->m_deviceContext->setVertexShader(vs);
-	D3D11PixelShader* ps = this->m_ge->m_system->createPixelShader(L"Scr\\VE\\inc\\Graphics\\Shaders\\PixelShader.hlsl");
+	D3D11PixelShader* ps = this->m_ge->m_system->createPixelShader(L"Scr\\VE\\inc\\Graphics\\Shaders\\TextureSampling.hlsl");
 	this->m_ge->m_system->m_deviceContext->setPixelShader(ps);
 	{
 
@@ -56,9 +69,8 @@ void VGame::start()
 
 
 
-
 	//set up vertex Buffer 
-	vb = this->m_ge->m_system->createVertexBuffer(tri, sizeof(Vertex), ARRAYSIZE(tri));
+	vb = this->m_ge->m_system->createVertexBuffer(VTtri, sizeof(VertexAndTex), ARRAYSIZE(VTtri));
 	this->m_ge->m_system->m_deviceContext->setVertexBuffers(vb);
 	//ib = this->m_ge->m_system->createIndexBuffer(index_list, sizeof(WORD), ARRAYSIZE(index_list));
 	//this->m_ge->m_system->m_deviceContext->setIndexBuffer(ib);
@@ -115,7 +127,7 @@ void VGame::update()
 	cd.m_world *= temp;
 	cd.m_view.setIdentity();
 	//ortograhpic projection
-	VRect wr = this->m_wnd->getClientWindowRect();
+	VRect<> wr = this->m_wnd->getClientWindowRect();
 	cd.m_proj.setOrthoLH
 	(
 		(wr.right - wr.left) / 400.0f,

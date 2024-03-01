@@ -53,8 +53,9 @@ class D3D11Texture2D;
 	}\
 \
 }
-//Assert if value is null
+
 #include <assert.h>
+//Assert if value is null
 #define NULL_ERROR(arg, error)\
 {\
 	if(arg == 0){\

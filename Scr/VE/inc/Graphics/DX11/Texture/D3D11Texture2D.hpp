@@ -17,5 +17,7 @@ public:
 	struct ID3D11ShaderResourceView* m_reasourve_view;
 	//pointer to render custom render system class
 	class D3D11RenderSys* m_parent;
+	//keeps track of how to sample a texture 
+	struct ID3D11SamplerState* m_sample_state;
 };
 
