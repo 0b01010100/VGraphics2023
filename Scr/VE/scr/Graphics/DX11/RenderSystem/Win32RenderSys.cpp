@@ -44,9 +44,9 @@ void D3D11RenderSys::createSwapChain()
 	swapChain = new class D3D11SwapChain( this );
 }
 
-class D3D11VertexBuffer* D3D11RenderSys::createVertexBuffer(void* data, unsigned int size_vertex, unsigned int list_size)
+class D3D11VertexBuffer* D3D11RenderSys::createVertexBuffer(VDX11_VERTEX_BUFFER_DESC* desc)
 {
-	class D3D11VertexBuffer* buffer = new class D3D11VertexBuffer(data, size_vertex, list_size, this);
+	class D3D11VertexBuffer* buffer = new class D3D11VertexBuffer(desc, this);
 	return buffer;
 }
 

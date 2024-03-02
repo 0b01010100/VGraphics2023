@@ -1,3 +1,4 @@
+#pragma once
 #include <d3d11.h>
 #include <d3dcompiler.h>
 #pragma comment(lib, "d3d11.lib")
@@ -26,6 +27,7 @@ class D3D11Texture2D;
 #include <Graphics/DX11/VertexShader/D3D11VertexShader.hpp>
 #include <Graphics/DX11/PixelShader/D3D11PixelShader.hpp>
 #include <Graphics/DX11/Texture/D3D11Texture2D.hpp>
+
 
 
 #include<string>
@@ -66,5 +68,19 @@ class D3D11Texture2D;
 	}\
 }
 
-
-
+//vertex buffer description
+struct VDX11_VERTEX_BUFFER_DESC
+{
+	//The Amount of input layouts to use 
+	unsigned int ILC;
+	//Description for the inputlayout
+	D3D11_INPUT_ELEMENT_DESC* inputlayouts;
+	//a reference that keeps track of the vertex data provided by the user
+	void* data;
+	//size of one vertex
+	unsigned int size_vertex;
+	//the amount of elements on the vertex list
+	unsigned int list_size;
+	//The Vertex shader the user wants to use
+	D3D11VertexShader* vs;
+};

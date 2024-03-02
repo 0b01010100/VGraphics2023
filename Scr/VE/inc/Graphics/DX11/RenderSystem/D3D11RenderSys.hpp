@@ -9,7 +9,7 @@ public:
 	//Creates a DX11 swap Chain
 	void createSwapChain();
 	//Creates a DX11 VertexBuffer
-	class D3D11VertexBuffer * createVertexBuffer(void* data, unsigned int size_vertex, unsigned int list_size);
+	class D3D11VertexBuffer * createVertexBuffer(struct VDX11_VERTEX_BUFFER_DESC* desc);
 	//Creates a DX11 VertexShader
 	class D3D11VertexShader * createVertexShader(const wchar_t * file_path);
 	//Creates a DX11 PixelShader

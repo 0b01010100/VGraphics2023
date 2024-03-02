@@ -1,5 +1,6 @@
 #pragma once
 #include "VVector2D.h"
+#include "Requirements.hpp"
 //a three D vector or also called a 3 by 1 Matrix
 typedef struct VVector3D
 {

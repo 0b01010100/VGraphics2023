@@ -1,9 +1,9 @@
 #include <thread>
 #include <SDL/include/SDL/SDL.h>
-#include "VG/VGame.hpp"
+#include "VG/2D/TwoD.hpp"
 
 int SDL_main(int argc, char* argv[]) {
-	VGame * VG = new VGame();
+	TwoD* VG = new TwoD();
 	VG->start();
 	while (true)
 	{

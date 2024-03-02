@@ -1,5 +1,6 @@
 #pragma once
 #include "VVector3D.h"
+#include "Requirements.hpp"
 static void setIdentity(struct VMatrix3x3* m3x3);
 //a 3 by 3 Matrix 
 struct VMatrix3x3

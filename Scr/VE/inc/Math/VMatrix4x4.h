@@ -1,6 +1,6 @@
 #pragma once
-#pragma once
 #include <memory>
+#include "Requirements.hpp"
 #include "VVector3D.h"
 /// <summary>
 /// A 4 by 4 Matrix. All values in the indies are set to float by defualt
@@ -108,6 +108,39 @@ public:
 		mat[1][1] =(1.0f / height);
 		mat[2][2] = (1.0f / (far_plane - near_plane));
 		mat[3][2] = ( - (near_plane / (far_plane - near_plane)));
+	}
+	//rotates an object on the X using degress
+	void setRotationX(float theta_degrees)
+	{
+		//degrees to radians
+		float theta_radians = ((theta_degrees) * 3.14159265358979323846F / 180.0F);
+		setIdentity();
+		this->mat[1][1] = cosf(theta_radians);
+		this->mat[1][2] = -sinf(theta_radians);
+		this->mat[2][1] = sinf(theta_radians);
+		this->mat[2][2] = cosf(theta_radians);
+	}
+	//rotates an object on the Y using degress
+	void setRotationY(float theta_degrees)
+	{
+		//degrees to radians
+		float theta_radians = ((theta_degrees) * 3.14159265358979323846F / 180.0F);
+		setIdentity();
+		this->mat[0][0] = cosf(theta_radians);
+		this->mat[0][2] = sinf(theta_radians);
+		this->mat[2][0] = -sinf(theta_radians);
+		this->mat[2][2] = cosf(theta_radians);
+	}
+	//rotates an object on the Z using degress
+	void setRotationZ(float theta_degrees)
+	{
+		//degrees to radians
+		float theta_radians = ((theta_degrees) * 3.14159265358979323846F / 180.0F);
+		setIdentity();
+		this->mat[0][0] = cosf(theta_radians);
+		this->mat[0][1] = -sinf(theta_radians);
+		this->mat[1][0] = sinf(theta_radians);
+		this->mat[1][1] = cosf(theta_radians);
 	}
 
 public:
