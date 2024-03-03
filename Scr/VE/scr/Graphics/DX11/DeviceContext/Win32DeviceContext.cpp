@@ -18,20 +18,16 @@ void D3D11DeviceContext::setVertexBuffers(class D3D11VertexBuffer* pVertexBuffer
 	const UINT offset = 0b0;
 	this->m_devCon->IASetVertexBuffers(0, 1, &pVertexBuffer->m_vertexBuffer, &stride, &offset);
 	this->m_devCon->IASetInputLayout(pVertexBuffer->m_inputLayout);
-	if (pVertexBuffer->m_vertexBuffer)pVertexBuffer->m_vertexBuffer->Release();
-	if (pVertexBuffer->m_vertexBuffer)pVertexBuffer->m_inputLayout->Release();
 }
 
 void D3D11DeviceContext::setVertexShader(class D3D11VertexShader* pVertexShader)
 {
 	this->m_devCon->VSSetShader(pVertexShader->vertex_shader, nullptr, 0);
-	if(pVertexShader) pVertexShader->vertex_shader->Release();
 }
 
 void D3D11DeviceContext::setPixelShader(class D3D11PixelShader* pPixelShader)
 {
 	this->m_devCon->PSSetShader(pPixelShader->pixel_shader, nullptr, 0);
-	pPixelShader->pixel_shader->Release();
 }
 
 void D3D11DeviceContext::setVertexShaderConstantBuffer(class D3D11ConstantBuffer* pConstBuffer[], unsigned char amount)

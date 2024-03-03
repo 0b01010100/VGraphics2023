@@ -26,25 +26,25 @@ public:
 		float i30, float i31, float i32, float i33
 	) 
 	{
-		this->i00 = i00;
-		this->i01 = i01;
-		this->i02 = i02;
-		this->i03 = i03;
+		this->mat[0][0] = i00;
+		this->mat[0][1] = i01;
+		this->mat[0][2] = i02;
+		this->mat[0][3] = i03;
 
-		this->i10 = i10;
-		this->i11 = i11;
-		this->i12 = i12;
-		this->i13= i13;
+		this->mat[1][0] = i10;
+		this->mat[1][1] = i11;
+		this->mat[1][2] = i12;
+		this->mat[1][3] = i13;
 
-		this->i20 = i20;
-		this->i21 = i21;
-		this->i22 = i22;
-		this->i23 = i23;
+		this->mat[2][0] = i20;
+		this->mat[2][1] = i21;
+		this->mat[2][2] = i22;
+		this->mat[2][3] = i23;
 
-		this->i30 = i30;
-		this->i31 = i31;
-		this->i32 = i32;
-		this->i33 = i33;
+		this->mat[3][0] = i30;
+		this->mat[3][1] = i31;
+		this->mat[3][2] = i32;
+		this->mat[3][3] = i33;
 	}
 //initalize of the values in the matrix to an identity
 //m4x4 = |1		0		0		0| 
@@ -142,14 +142,17 @@ public:
 		this->mat[1][0] = sinf(theta_radians);
 		this->mat[1][1] = cosf(theta_radians);
 	}
-
+	
 public:
 	union
 	{
 		//4 by 4 matrix 
-		float mat[4][4];
+		struct
+		{
+			float mat[4][4];
+		};
 		//all the varaable in the matrix 
-		struct 
+		struct
 		{
 			float i00, i01, i02, i03;
 			float i10, i11, i12, i13;

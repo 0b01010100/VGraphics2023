@@ -41,7 +41,10 @@ public:
 	}
 	union
 	{
-		float mat[3][3];
+		struct
+		{
+			float mat[3][3];
+		};
 		struct
 		{
 			float i00, i01, i02;

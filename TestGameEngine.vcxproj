@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Scr\VG\3D\Cube.cpp" />
     <ClCompile Include="Scr\VE\inc\Math\Requirements.hpp" />
     <ClCompile Include="Scr\VE\scr\Graphics\DX11\Texture\D3D11Texture2D.cpp" />
     <ClCompile Include="Scr\main.cpp">
@@ -40,6 +41,7 @@
     <ClCompile Include="Scr\VG\2D\TwoD.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Scr\VG\3D\Cube.h" />
     <ClInclude Include="Scr\VE\inc\Debuging\DebugUtils.h" />
     <ClInclude Include="Scr\VE\inc\Graphics\DX11\Texture\D3D11Texture2D.hpp" />
     <ClInclude Include="Scr\VE\inc\Math\All.h" />

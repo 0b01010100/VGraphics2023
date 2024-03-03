@@ -1,8 +1,11 @@
 #include <Graphics/DX11/Requirements.hpp>
 enum D3D_DRIVER_TYPE drivers[3]
 {
+	//Drawing is mainly Executed to the GPU when using this Driver
 	D3D_DRIVER_TYPE::D3D_DRIVER_TYPE_HARDWARE,
+	//This is a very fast Driver that has the CPU to do most of the Math to get thing draw on the screen.
 	D3D_DRIVER_TYPE::D3D_DRIVER_TYPE_WARP,
+	//Compatbale with most DirectX Features, but is pretty slow compared the the First two Drivers.
 	D3D_DRIVER_TYPE::D3D_DRIVER_TYPE_REFERENCE
 };
 D3D11RenderSys::D3D11RenderSys(class D3D11GraphicsEngine* engine)
@@ -14,7 +17,8 @@ D3D11RenderSys::D3D11RenderSys(class D3D11GraphicsEngine* engine)
 	//The rendering feature from DirectX to target 
 	enum D3D_FEATURE_LEVEL feature_levels[] =
 	{
-		D3D_FEATURE_LEVEL_11_0
+		D3D_FEATURE_LEVEL_11_1,
+		D3D_FEATURE_LEVEL_11_0,
 	};
 	HRESULT hr = {};
 	for (int i = 0; i < ARRAYSIZE(drivers); i++) {

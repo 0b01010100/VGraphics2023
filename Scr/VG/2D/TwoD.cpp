@@ -42,7 +42,6 @@ D3D11VertexBuffer* vb;
 D3D11IndexBuffer* ib;
 void TwoD::start()
 {
-	float d = 2.9f;
 	//create a 2D texture 
 	D3D11Texture2D* tex = this->graphics->m_system->createTexture2D("Scr\\VE\\inc\\Graphics\\Textures\\me.jpg");
 	this->graphics->m_system->m_deviceContext->setPixelShaderTexture(&tex, 1);
@@ -53,7 +52,6 @@ void TwoD::start()
 	D3D11PixelShader* ps = this->graphics->m_system->createPixelShader(L"Scr\\VE\\inc\\Graphics\\Shaders\\TextureSampling.hlsl");
 	this->graphics->m_system->m_deviceContext->setPixelShader(ps);
 	{
-
 		constant cd = {};
 		//cd.World = a;
 
@@ -82,36 +80,36 @@ void TwoD::getUserInput()
 	if (this->input->isKey(VKey::_W, VKeyState::down) && this->window->hasUserFocus())
 	{
 		this->pos.Y += 0.02f;
-		VConsole_Log(&this->pos, "Pos");
+		//VConsole_Log(&this->pos, "Pos");
 	}
 	if (this->input->isKey(VKey::_S, VKeyState::down) && this->window->hasUserFocus())
 	{
 		this->pos.Y -= 0.02f;
-		VConsole_Log(&this->pos, "Pos");
+		//VConsole_Log(&this->pos, "Pos");
 	}
 	if (this->input->isKey(VKey::_A, VKeyState::down) && this->window->hasUserFocus())
 	{
 		this->pos.X -= 0.02f;
-		VConsole_Log(&this->pos, "Pos");
+		//VConsole_Log(&this->pos, "Pos");
 	}
 	if (this->input->isKey(VKey::_D, VKeyState::down) && this->window->hasUserFocus())
 	{
 		this->pos.X += 0.02f;
-		VConsole_Log(&this->pos, "Pos");
+		//VConsole_Log(&this->pos, "Pos");
 	}
 }
 void TwoD::updateQuad()
 {
 	VMatrix4x4 temp = {};
 	constant cd = {};
-	cd.m_world.setScale(VVector3D(0.5f, 0.5f, 0.5f));
+	cd.m_world.setScale(VVector3D(0.5f, 0.5f, 0.5f) );
 
 	//set the X, Y values in the temp mateix to the value of pos
-	temp.setTranslation(VVector3D(this->pos, 0));
+	temp.setTranslation(VVector3D(this->pos, 1));
 	//multiply the world matrix the change the	Translation on the X,Y, and Z
 	cd.m_world *= temp;
 	//change the Z axis by 90 in degress
-	temp.setRotationZ(80);
+	temp.setRotationZ(30);
 	cd.m_world *= temp;
 
 	cd.m_view.setIdentity();
@@ -130,7 +128,7 @@ void TwoD::updateQuad()
 }
 void TwoD::render()
 {
-	this->graphics->m_system->m_deviceContext->clearRenderTarget(0, 0, 0, 1);
+	this->graphics->m_system->m_deviceContext->clearRenderTarget(1, 0, 0, 1);
 
 	this->graphics->m_system->m_deviceContext->setViewPort(300, 300);
 	this->graphics->m_system->m_deviceContext->m_devCon->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP);

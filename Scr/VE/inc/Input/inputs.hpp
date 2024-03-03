@@ -1,11 +1,13 @@
 #pragma once
 #include <Windows.h>
+//the state of keys
 enum class VKeyState : char
 {
 	null = 0,
 	down,
 	up,
 };
+//select a key to check for
 enum class VKey : short
 {
 	null = 0,

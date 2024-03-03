@@ -16,7 +16,10 @@ struct VMatrix2x2
 	}
 	union
 	{
-		float mat[2][2];
+		struct
+		{
+			float mat[2][2];
+		};
 		struct 
 		{
 			float i00, i01;

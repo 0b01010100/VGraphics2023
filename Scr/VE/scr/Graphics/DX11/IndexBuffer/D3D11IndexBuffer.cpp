@@ -6,7 +6,7 @@ D3D11IndexBuffer::D3D11IndexBuffer(void* data, unsigned int index_size, unsigned
 	this->m_parent = parent;
 
 	//describ the attribute for the index Buffer 
-	struct D3D11_BUFFER_DESC description = {};
+	struct D3D11_BUFFER_DESC description = { 0 };
 	//Size of the whole data 
 	description.ByteWidth = index_size * list_size;
 	//the resource will be read and wirten to by the GPU

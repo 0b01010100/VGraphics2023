@@ -42,7 +42,7 @@ static void VConsole_Log(const VVector3D* in, const char* nameLabel = "")
 //prints the values in the 4D vector to the console
 static void VConsole_Log(const VVector4D* in, const char* nameLabel = "")
 {
-	printf("Vector4D: %s\n| %f |\n| %f |\n| %f |\n| %f |\n", nameLabel, in->X, in->Y, in->Z, in->Z);
+	printf("Vector4D: %s\n| %f |\n| %f |\n| %f |\n| %f |\n", nameLabel, in->X, in->Y, in->Z, in->W);
 }
 //prints the values in the 2x2 Matrix to the console
 static void VConsole_Log(const VMatrix2x2* in, const char* nameLabel = "")
@@ -67,11 +67,12 @@ static void VConsole_Log(const VMatrix4x4* in, const char* nameLabel = "")
 		in->i30, in->i31, in->i32, in->i33,
 		"]\n");
 }
+#define Vprint(d) VConsole_Log(d);
 #else
 //if not in debug replace and the function calls with a empty macros so and compile error will not occor 
 
 //Warning you are in debug mode so the VConsole_Log function will not be called
 #define VConsole_Log 
-
+#define Vprint 
 #endif
 

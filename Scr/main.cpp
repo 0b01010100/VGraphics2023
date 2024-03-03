@@ -1,9 +1,9 @@
 #include <thread>
 #include <SDL/include/SDL/SDL.h>
-#include "VG/2D/TwoD.hpp"
+#include "VG/3D/Cube.h"
 
 int SDL_main(int argc, char* argv[]) {
-	TwoD* VG = new TwoD();
+	Cube* VG = new Cube();
 	VG->start();
 	while (true)
 	{
